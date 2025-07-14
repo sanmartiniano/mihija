@@ -42,3 +42,69 @@ img {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.foto-principal {
+    width: 80%;           /* Hace que no ocupe toda la pantalla */
+    max-width: 500px;     /* No más de 500px de ancho */
+    height: auto;         /* Mantiene proporción */
+    margin: 20px auto;    /* Espacio arriba y abajo, y centrado horizontal */
+    display: block;       /* Necesario para que funcione el centrado */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el menú principal en línea */
+.menu-principal {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 10px 0 20px 0;
+    justify-content: center;
+    background-color: #f8bbd0; /* color suave rosa */
+    border-radius: 8px;
+}
+
+.menu-principal li {
+    /* No margin para los li, ya que usamos gap en ul */
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-principal a:hover,
+.menu-principal a:focus {
+    background-color: #ec407a; /* rosa más fuerte al pasar el mouse */
+    outline: none;
+}
+
+/* Galería de fotos nacimiento */
+.galeria-nacimiento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria-nacimiento img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria-nacimiento img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
