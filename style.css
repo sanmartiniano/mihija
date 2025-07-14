@@ -43,12 +43,15 @@ img {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .foto-principal {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
+    width: 80%;           /* Hace que no ocupe toda la pantalla */
+    max-width: 500px;     /* No más de 500px de ancho */
+    height: auto;         /* Mantiene proporción */
+    margin: 20px auto;    /* Espacio arriba y abajo, y centrado horizontal */
+    display: block;       /* Necesario para que funcione el centrado */
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
 /* Estilo para el menú principal en línea */
 .menu-principal {
     list-style: none;
