@@ -1,51 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fotos de OLI</title>
-  <link rel="stylesheet" href="../css/style.css" />
+    <meta charset="UTF-8" />
+    <title>Fotos de OLI</title>
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Fotos de OLI</h1>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Inicio</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <h2>Fotos de Nacimiento</h2>
-    <div class="galeria-nacimiento">
-      <img src="nacimiento1.jpeg" alt="Foto 1 de nacimiento" class="zoomable" />
-      <img src="nacimiento2.jpeg" alt="Foto 2 de nacimiento" class="zoomable" />
-      <img src="nacimiento3.jpeg" alt="Foto 3 de nacimiento" class="zoomable" />
-    </div>
-  </main>
-
-  <!-- Ventana modal para agrandar imágenes -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <span id="closeBtn">&times;</span>
-    <img id="lightboxImg" src="">
-  </div>
-
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-
-    document.querySelectorAll('.zoomable').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.style.display = 'none';
-    }
-  </script>
+    <header>
+        <h1>Fotos de OLI</h1>
+         
+              <nav>
+            <ul>
+          
+             <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+            
+        
+    </header>
+    <main>
+        <h2>Fotos de Nacimiento</h2>
+        <div class="galeria-nacimiento">
+            <img src="nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
+            <img src="nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
+            <img src="nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
+            <!-- Más fotos -->
+        </div>
+    </main>
 </body>
 </html>
-
-
+  asi lo tengo yo en que parte tendria que poner class="zoomable
