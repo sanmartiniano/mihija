@@ -159,3 +159,38 @@ img.zoomable:hover {
     padding-bottom: 5px;
 }
 Agrego estilos para .titulo-nacimiento
+/* --- Estilos para el Lightbox (imagen ampliada al hacer click) --- */
+
+#lightbox {
+    display: none;               /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox.show {
+    display: flex;               /* Se muestra con flex cuando está activo */
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
