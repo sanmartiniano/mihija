@@ -147,9 +147,15 @@ img.zoomable:hover {
   cursor: pointer;
 }
 .titulo-nacimiento {
-    color: green;
-    font-size: 3em;
-    font-weight: bold;
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    color: #c2185b;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f8bbd0;
+    display: inline-block;
+    padding-bottom: 5px;
 }
-
+Agrego estilos para .titulo-nacimiento
