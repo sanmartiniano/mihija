@@ -107,6 +107,115 @@ img {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f5;
+    color: #333;
+}
+
+header {
+    background-color: #f8bbd0;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #ec407a;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.foto-principal {
+    width: 80%;           /* Hace que no ocupe toda la pantalla */
+    max-width: 500px;     /* No más de 500px de ancho */
+    height: auto;         /* Mantiene proporción */
+    margin: 20px auto;    /* Espacio arriba y abajo, y centrado horizontal */
+    display: block;       /* Necesario para que funcione el centrado */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el menú principal en línea */
+.menu-principal {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 10px 0 20px 0;
+    justify-content: center;
+    background-color: #f8bbd0; /* color suave rosa */
+    border-radius: 8px;
+}
+
+.menu-principal li {
+    /* No margin para los li, ya que usamos gap en ul */
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-principal a:hover,
+.menu-principal a:focus {
+    background-color: #ec407a; /* rosa más fuerte al pasar el mouse */
+    outline: none;
+}
+
+/* Galería de fotos nacimiento */
+.galeria-nacimiento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria-nacimiento img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.galeria-nacimiento img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
 /* --- Zoom y lightbox para imágenes --- */
 
 img.zoomable {
@@ -145,10 +254,10 @@ img.zoomable:hover {
   font-size: 40px;
   color: white;
   cursor: pointer;
-}
+
 .titulo-nacimiento {
     font-family: 'Georgia', serif;
-    font-size: 1.8em;
+    font-size: 2.5em;
     color: #c2185b;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     text-align: center;
@@ -157,40 +266,4 @@ img.zoomable:hover {
     border-bottom: 3px solid #f8bbd0;
     display: inline-block;
     padding-bottom: 5px;
-}
-Agrego estilos para .titulo-nacimiento
-/* --- Estilos para el Lightbox (imagen ampliada al hacer click) --- */
-
-#lightbox {
-    display: none;               /* Oculto por defecto */
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.85);
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox.show {
-    display: flex;               /* Se muestra con flex cuando está activo */
-}
-
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
-}
-
-#closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
 }
