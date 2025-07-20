@@ -4,68 +4,89 @@
     <meta charset="UTF-8" />
     <title>Fotos de OLI</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        /* Ejemplo básico para lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox.show {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Fotos de OLI</h1>
-         
-              <nav>
+        <nav>
             <ul>
-          
-             <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
             </ul>
         </nav>
-            
-        
     </header>
+
     <main>
         <h2>Fotos de Nacimiento</h2>
         <div class="galeria-nacimiento">
-    <img src="../imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento4.jpg"  alt="Foto 4 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento5.jpg"  alt="Foto 5 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento6.jpg"  alt="Foto 6 de nacimiento" />
-    
-    <!-- Más fotos -->
-</div>
-
+            <img src="../imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
+            <img src="../imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
+            <img src="../imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
+            <img src="../imagenes/nacimiento/nacimiento4.jpg"  alt="Foto 4 de nacimiento" />
+            <img src="../imagenes/nacimiento/nacimiento5.jpg"  alt="Foto 5 de nacimiento" />
+            <img src="../imagenes/nacimiento/nacimiento6.jpg"  alt="Foto 6 de nacimiento" />
         </div>
     </main>
-</body>
-</html>
 
-        <!-- Lightbox -->
-        <div id="lightbox">
-            <span id="closeBtn">&times;</span>
-            <img id="lightbox-img" src="" alt="Foto ampliada" />
-        </div>
-    </main>
+    <!-- Lightbox (dentro del body) -->
+    <div id="lightbox">
+        <span id="closeBtn">&times;</span>
+        <img id="lightbox-img" src="" alt="Foto ampliada" />
+    </div>
 
     <script>
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      const closeBtn = document.getElementById('closeBtn');
-      const images = document.querySelectorAll('.galeria-nacimiento img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('closeBtn');
+        const images = document.querySelectorAll('.galeria-nacimiento img');
 
-      images.forEach(img => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', () => {
-          lightboxImg.src = img.src;
-          lightbox.classList.add('show');
+        images.forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('show');
+            });
         });
-      });
 
-      closeBtn.addEventListener('click', () => {
-        lightbox.classList.remove('show');
-      });
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+        });
 
-      lightbox.addEventListener('click', e => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove('show');
-        }
-      });
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
