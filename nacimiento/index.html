@@ -2,138 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Galería con Zoom Suave</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .galeria-nacimiento {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .galeria-nacimiento img {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .galeria-nacimiento img:hover {
-            transform: scale(1.05);
-        }
-
-        /* LIGHTBOX */
-        #lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        #lightbox.show {
-            display: flex;
-        }
-
-        #lightbox-img {
-            max-width: 90%;
-            max-height: 85%;
-            border-radius: 10px;
-            transform: scale(0.8);
-            opacity: 0;
-            animation: zoomIn 0.4s ease forwards;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-        }
-
-        #closeBtn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-            z-index: 10000;
-        }
-
-        @keyframes zoomIn {
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                background-color: rgba(0, 0, 0, 0);
-            }
-            to {
-                background-color: rgba(0, 0, 0, 0.85);
-            }
-        }
-    </style>
+    <title>Fotos de OLI</title>
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
+    <header>
+        <h1>Fotos de OLI</h1>
+         
+              <nav>
+            <ul>
+          
+             <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+            
+        
+    </header>
+    <main>
+        <h2>Fotos de Nacimiento</h2>
+        <div class="galeria-nacimiento">
+    <img src="../imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
+    <img src="../imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
+    <img src="../imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
+    <img src="../imagenes/nacimiento/nacimiento4.jpg"  alt="Foto 4 de nacimiento" />
+    <img src="../imagenes/nacimiento/nacimiento5.jpg"  alt="Foto 5 de nacimiento" />
+    <img src="../imagenes/nacimiento/nacimiento6.jpg"  alt="Foto 6 de nacimiento" />
+    
+    <!-- Más fotos -->
+</div>
 
-    <h2>Fotos de Nacimiento</h2>
-    <div class="galeria-nacimiento">
-        <img src="/mihija/imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1" />
-        <img src="/mihija/imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2" />
-        <img src="/mihija/imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3" />
-    </div>
-
-    <!-- Lightbox -->
-    <div id="lightbox">
-        <span id="closeBtn">&times;</span>
-        <img id="lightbox-img" src="" alt="Foto ampliada" />
-    </div>
-
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('closeBtn');
-        const images = document.querySelectorAll('.galeria-nacimiento img');
-
-        images.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('show');
-
-                // Reinicia animación si se hace clic varias veces rápido
-                lightboxImg.style.animation = 'none';
-                void lightboxImg.offsetWidth; // Forzar reflow
-                lightboxImg.style.animation = 'zoomIn 0.4s ease forwards';
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.classList.remove('show');
-        });
-
-        lightbox.addEventListener('click', e => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('show');
-            }
-        });
-    </script>
-
+        </div>
+    </main>
 </body>
 </html>
-
