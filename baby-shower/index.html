@@ -2,25 +2,66 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Baby shower</title>
+    <title>Fotos de OLI</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <h1>Baby shower</h1>
+        <h1>Fotos de OLI</h1>
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../nacimiento/index.html">Nacimiento</a></li>
-                <li><a href="../baby-shower/index.html">Baby Shower</a></li>
-                <li><a href="../viaje-la-rioja/index.html">Viaje a La Rioja</a></li>
-                <li><a href="../galeria/index.html">Galería</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Fotos de Baby shower</h2>
-        <p>Aquí irán las fotos de Baby shower.</p>
+        <h2 class="titulo-seccion">Fotos del Baby Showers</h2>
+        <div class="galeria-babyshower">
+            <img class="zoomable" src="../imagenes/babyshower/babyshower1.jpg" alt="Foto 1 del baby shower" />
+            <img class="zoomable" src="../imagenes/babyshower/babyshower2.jpg" alt="Foto 2 del baby shower" />
+            <img class="zoomable" src="../imagenes/babyshower/babyshower3.jpg" alt="Foto 3 del baby shower" />
+            <img class="zoomable" src="../imagenes/babyshower/babyshower4.jpg" alt="Foto 4 del baby shower" />
+            <img class="zoomable" src="../imagenes/babyshower/babyshower5.jpg" alt="Foto 5 del baby shower" />
+            <img class="zoomable" src="../imagenes/babyshower/babyshower6.jpg" alt="Foto 6 del baby shower" /> 
+            <img class="zoomable" src="../imagenes/babyshower/babyshower7.jpg" alt="Foto 7 del baby shower" />
+        </div>
     </main>
+
+    <!-- Lightbox para imagen ampliada -->
+    <div id="lightbox">
+        <span id="closeBtn">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Script para efecto de zoom al hacer clic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("closeBtn");
+            const zoomableImages = document.querySelectorAll(".zoomable");
+
+            zoomableImages.forEach(img => {
+                img.addEventListener("click", () => {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = "flex";
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.style.display = "none";
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
