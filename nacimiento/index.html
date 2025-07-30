@@ -2,36 +2,67 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <title>Fotos de OLI</title>
+    <title>Fotos de OLI - Nacimiento</title>
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
     <header>
         <h1>Fotos de OLI</h1>
-         
-              <nav>
+        <nav>
             <ul>
-          
-             <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html">Inicio</a></li>
             </ul>
         </nav>
-            
-        
     </header>
-    <main>
-        <h2>Fotos de Nacimiento</h2>
-        <div class="galeria-nacimiento">
-    <img src="/mi-hija/imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento4.jpg"  alt="Foto 4 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento5.jpg"  alt="Foto 5 de nacimiento" />
-    <img src="../imagenes/nacimiento/nacimiento6.jpg"  alt="Foto 6 de nacimiento" />
-    
-    <!-- Más fotos -->
-</div>
 
+    <main>
+        <h2 class="titulo-nacimiento">Fotos de Nacimiento</h2>
+        <div class="galeria-nacimiento">
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento1.jpeg" alt="Foto 1 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento2.jpeg" alt="Foto 2 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento3.jpeg" alt="Foto 3 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento4.jpg"  alt="Foto 4 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento5.jpg"  alt="Foto 5 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento6.jpg"  alt="Foto 6 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento7.jpg"  alt="Foto 7 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento8.jpg"  alt="Foto 8 de nacimiento" />
+            <img class="zoomable" src="../imagenes/nacimiento/nacimiento9.jpg"  alt="Foto 9 de nacimiento" />
         </div>
     </main>
+
+    <!-- Lightbox para imagen ampliada -->
+    <div id="lightbox">
+        <span id="closeBtn">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Script para efecto de zoom al hacer clic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("closeBtn");
+            const zoomableImages = document.querySelectorAll(".zoomable");
+
+            zoomableImages.forEach(img => {
+                img.addEventListener("click", () => {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = "flex";
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.style.display = "none";
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
