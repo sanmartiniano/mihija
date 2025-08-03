@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Galería</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-Galeria">Fotos de Galería</h2>
+        <div class="galeria-Galeria">
+            <img class="zoomable" src="../imagenes/galeria/galeria1.jpg" alt="Foto 1 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria2.jpg" alt="Foto 2 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria3.jpg" alt="Foto 3 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria4.jpg" alt="Foto 4 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria5.jpg" alt="Foto 5 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria6.jpg" alt="Foto 6 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria7.jpg" alt="Foto 7 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria8.jpg" alt="Foto 8 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria9.jpg" alt="Foto 9 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria10.jpg" alt="Foto 10 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria11.jpg" alt="Foto 11 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria12.jpg" alt="Foto 12 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria13.jpg" alt="Foto 13 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria14.jpg" alt="Foto 14 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria15.jpg" alt="Foto 15 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria16.jpg" alt="Foto 16 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria17.jpg" alt="Foto 17 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria18.jpg" alt="Foto 18 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria19.jpg" alt="Foto 19 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria20.jpg" alt="Foto 20 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria21.jpg" alt="Foto 21 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria22.jpg" alt="Foto 22 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria23.jpg" alt="Foto 23 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria24.jpg" alt="Foto 24 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria25.jpg" alt="Foto 25 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria26.jpg" alt="Foto 26 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria27.jpg" alt="Foto 27 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria28.jpg" alt="Foto 28 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria29.jpg" alt="Foto 29 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria30.jpg" alt="Foto 30 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria31.jpg" alt="Foto 31 de galería" />
+            <img class="zoomable" src="../imagenes/galeria/galeria32.jpg" alt="Foto 32 de galería" />
+        </div>
+    </main>
+
+    <!-- Lightbox para imagen ampliada -->
+    <div id="lightbox">
+        <span id="closeBtn">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Script para efecto de zoom -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("closeBtn");
+            const zoomableImages = document.querySelectorAll(".zoomable");
+
+            zoomableImages.forEach(img => {
+                img.addEventListener("click", () => {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = "flex";
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.style.display = "none";
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
