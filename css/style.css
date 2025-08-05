@@ -1,30 +1,43 @@
-/* --- Estilos generales --- */
-body {
-    font-family: Arial, sans-serif;
+/* ----- RESET & FUENTE GENERAL ----- */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fff0f5;
-    color: #333;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Quicksand', Arial, sans-serif;
+    background: linear-gradient(to right, #fff0f5, #fde2e2);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ----- ENCABEZADO ----- */
 header {
     background-color: #f8bbd0;
-    color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-main {
-    padding: 20px;
+header h1 {
+    font-size: 2.5em;
+    color: #ffffff;
 }
 
-/* --- Navegación --- */
+.resaltado {
+    color: #ff4081;
+}
+
+/* ----- NAVEGACIÓN ----- */
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 nav a {
@@ -32,61 +45,87 @@ nav a {
     color: white;
     font-weight: bold;
     background-color: #ec407a;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* --- Menú principal personalizado --- */
-.menu-principal {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    padding: 0;
-    margin: 10px 0 20px 0;
-    justify-content: center;
-    background-color: #f8bbd0;
-    border-radius: 8px;
-}
-
-.menu-principal a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
     padding: 10px 15px;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.menu-principal a:hover,
-.menu-principal a:focus {
-    background-color: #ec407a;
-    outline: none;
+nav a:hover,
+nav a:focus {
+    background-color: #d81b60;
 }
 
-/* --- Imagen destacada principal --- */
+/* ----- CONTENIDO PRINCIPAL ----- */
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ----- IMAGEN PRINCIPAL ----- */
 .foto-principal {
-    width: 80%;
-    max-width: 500px;
+    max-width: 90%;
     height: auto;
-    margin: 20px auto;
-    display: block;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    margin: 20px auto;
 }
 
-/* --- Galería de fotos de nacimiento --- */
-.galeria-nacimiento {
+.foto-principal:hover {
+    transform: scale(1.03);
+}
+
+/* ----- TÍTULOS GENERALES ----- */
+.titulo-seccion,
+.titulo-nacimiento,
+.titulo-Galeria {
+    font-family: 'Georgia', serif;
+    font-size: 2.3em;
+    color: #c2185b;
+    text-align: center;
+    margin: 30px 0 20px;
+    border-bottom: 3px solid #f8bbd0;
+    display: inline-block;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.titulo-seccion::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ff69b4;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ----- GALERÍA GENERAL ----- */
+.galeria-nacimiento,
+.galeria-babyshower,
+.galeria-Galeria {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
     justify-content: center;
+    gap: 15px;
     margin-top: 20px;
+    padding: 10px;
 }
 
-.galeria-nacimiento img {
-    width: 250px;
-    height: 250px;
+.galeria-Galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ----- IMÁGENES DE GALERÍAS ----- */
+.galeria-nacimiento img,
+.galeria-babyshower img,
+.galeria-Galeria img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -94,35 +133,18 @@ nav a {
     cursor: pointer;
 }
 
-.galeria-nacimiento img:hover {
+.galeria-Galeria img {
+    height: 200px;
+}
+
+.galeria-nacimiento img:hover,
+.galeria-babyshower img:hover,
+.galeria-Galeria img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Estilo para título de sección nacimiento --- */
-.titulo-nacimiento {
-    font-family: 'Georgia', serif;
-    font-size: 2.5em;
-    color: #c2185b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #f8bbd0;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* --- Zoom e imagen expandida tipo Lightbox --- */
-img.zoomable {
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-img.zoomable:hover {
-    transform: scale(1.05);
-}
-
+/* ----- LIGHTBOX GENERAL ----- */
 #lightbox {
     display: none;
     position: fixed;
@@ -136,7 +158,8 @@ img.zoomable:hover {
     align-items: center;
 }
 
-#lightbox img {
+#lightbox img,
+#lightbox-img {
     max-width: 90%;
     max-height: 80%;
     border: 5px solid white;
@@ -150,240 +173,25 @@ img.zoomable:hover {
     font-size: 40px;
     color: white;
     cursor: pointer;
-}
-.galeria-babyshower {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.galeria-babyshower img {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.galeria-babyshower img:hover {
-    transform: scale(1.05);
-}
-
-/* Estilos para el lightbox */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-#closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
     z-index: 1001;
 }
-/* Estilos generales para el body y header (si ya los tenés, no hace falta repetirlos) */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff0f5;
-    color: #333;
-}
 
-header {
-    background-color: #f8bbd0;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+/* ----- RESPONSIVE ----- */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    .foto-principal {
+        max-width: 95%;
+    }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background-color: #ec407a;
-    padding: 10px;
-    border-radius: 5px;
+    .galeria-nacimiento img,
+    .galeria-babyshower img,
+    .galeria-Galeria img {
+        max-width: 90%;
+        height: auto;
+    }
 }
-
-/* Estilo para el título resaltado */
-.titulo-seccion {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: #444;
-    position: relative;
-}
-
-.titulo-seccion::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #ff69b4; /* Rosa suave */
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-/* Galería Baby Shower */
-.galeria-babyshower {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.galeria-babyshower img {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.galeria-babyshower img:hover {
-    transform: scale(1.05);
-}
-
-/* Estilos para el lightbox */
-#lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-}
-
-#closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 1001;
-}
-.galeria-Galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* ajustable */
-    gap: 10px;
-    padding: 10px;
-}
-
-.galeria-Galeria img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.galeria-Galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* Lightbox */
-#lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-#lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}
-
-#closeBtn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-.titulo-Galeria {
-    font-family: 'Georgia', serif;
-    font-size: 2.2em;
-    color: #c2185b;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #f8bbd0;
-    display: inline-block;
-    padding-bottom: 5px;
-    width: 100%;
-}
-
-.galeria-Galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.galeria-Galeria img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.galeria-Galeria img:hover {
-    transform: scale(1.05);
-}
-
 
