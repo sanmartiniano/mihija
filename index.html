@@ -1,18 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de OLI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Mi Hija</title>
+
+    <!-- Estilo general -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Bienvenidos a la página de <span class="resaltado">OLI</span></h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
+            <ul class="menu">
                 <li><a href="nacimiento/index.html">Nacimiento</a></li>
                 <li><a href="baby-shower/index.html">Baby Shower</a></li>
                 <li><a href="viaje-la-rioja/index.html">Viaje a La Rioja</a></li>
@@ -24,5 +28,23 @@
     <main>
         <img src="imagenes/oliportada.jpg" alt="Mi hija" class="foto-principal">
     </main>
+
+    <!-- Script de animaciones (solo la primera vez) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const img = document.querySelector(".foto-principal");
+            const titulo = document.querySelector("h1");
+            const menu = document.querySelector(".menu");
+
+            if (!sessionStorage.getItem("animacionMostrada")) {
+                img.classList.add("animar");
+                titulo.classList.add("animar-titulo");
+                menu.classList.add("animar-menu");
+
+                sessionStorage.setItem("animacionMostrada", "true");
+            }
+        });
+    </script>
 </body>
 </html>
+
